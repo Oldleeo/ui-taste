@@ -1,0 +1,29 @@
+/* WheelDropdown — a dropdown that opens in place as a wheel.
+   Part of ui-taste · MIT */
+.wdd{
+  --wdd-card:#fcfcfc; --wdd-ink:#111; --wdd-mute:#8d8d8d; --wdd-hl:#efefef;
+  --wdd-font:500 15px/1 "Inter",-apple-system,BlinkMacSystemFont,"SF Pro Text","PingFang SC","Helvetica Neue",Arial,sans-serif;
+  position:relative; display:inline-block; width:var(--wdd-closed-w,188px); height:44px;
+  font:var(--wdd-font); color:var(--wdd-ink); -webkit-font-smoothing:antialiased; user-select:none;
+}
+.wdd-card{position:absolute;left:50%;top:50%;background:var(--wdd-card);outline:none;overflow:hidden;cursor:pointer;z-index:10;
+  box-shadow:0 0 0 1px rgba(0,0,0,.04),0 1px 2px rgba(0,0,0,.04),0 6px 16px rgba(0,0,0,.06),0 18px 40px rgba(0,0,0,.05)}
+.wdd-card.is-open{cursor:default}
+.wdd-card:focus-visible{box-shadow:0 0 0 1px rgba(0,0,0,.14),0 6px 16px rgba(0,0,0,.06),0 18px 40px rgba(0,0,0,.05)}
+.wdd-caret{position:absolute;top:50%;width:0;height:0;margin-top:-5px;z-index:3;
+  border-left:8px solid var(--wdd-ink);border-top:5px solid transparent;border-bottom:5px solid transparent}
+.wdd-hl{position:absolute;top:50%;right:12px;height:44px;margin-top:-22px;border-radius:10px;background:var(--wdd-hl)}
+.wdd-wheel{position:absolute;inset:0}
+.wdd-item{position:absolute;left:0;top:50%;height:44px;margin-top:-22px;display:flex;align-items:center;gap:13px;white-space:nowrap;
+  will-change:transform,opacity,filter;cursor:pointer}
+.wdd-label{color:var(--wdd-mute);font-weight:500;letter-spacing:-.005em}
+.wdd-item.is-center .wdd-label{color:var(--wdd-ink);font-weight:600}
+.wdd-icon{position:relative;width:22px;height:16px;border-radius:4px;flex:none;overflow:hidden;box-shadow:0 0 0 1px rgba(0,0,0,.08)}
+.wdd-icon svg,.wdd-icon img{display:block;width:100%;height:100%;object-fit:cover}
+.wdd-icon::after{content:"";position:absolute;inset:0;border-radius:inherit;
+  background:linear-gradient(180deg,rgba(255,255,255,.28),rgba(255,255,255,0) 45%,rgba(0,0,0,.08));box-shadow:inset 0 0 0 .5px rgba(255,255,255,.35)}
+.wdd-ticks{position:absolute;left:0;top:0;pointer-events:none}
+@media (prefers-color-scheme:dark){
+  .wdd[data-theme="auto"]{--wdd-card:#1c1c1e;--wdd-ink:#f2f2f2;--wdd-mute:#8a8a8e;--wdd-hl:#2c2c2e}
+}
+.wdd[data-theme="dark"]{--wdd-card:#1c1c1e;--wdd-ink:#f2f2f2;--wdd-mute:#8a8a8e;--wdd-hl:#2c2c2e}
