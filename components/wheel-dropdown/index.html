@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Wheel Dropdown · ui-taste</title>
+<meta name="description" content="A dropdown that opens in place as a wheel. 下拉不一定要往下拉。">
+<link rel="stylesheet" href="wheel-dropdown.css">
+<style>
+  :root{--bg:#f0f0f0;--ink:#111;--mute:#8d8d8d;--line:rgba(0,0,0,.08)}
+  body.dark{--bg:#0f0f10;--ink:#f2f2f2;--mute:#77777c;--line:rgba(255,255,255,.08)}
+  *{box-sizing:border-box}
+  html,body{height:100%;margin:0}
+  body{background:var(--bg);color:var(--ink);font:400 13px/1.6 "Inter",-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;
+    display:grid;grid-template-rows:auto 1fr auto;transition:background .3s,color .3s;-webkit-font-smoothing:antialiased}
+  header,footer{display:flex;justify-content:space-between;align-items:center;padding:18px 24px;color:var(--mute)}
+  header a,footer a{color:inherit;text-decoration:none}
+  header a:hover,footer a:hover{color:var(--ink)}
+  .brand{font-weight:600;color:var(--ink);letter-spacing:-.01em}
+  .brand span{color:var(--mute);font-weight:400}
+  main{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:40px}
+  .stage{height:280px;display:flex;align-items:center;justify-content:center}
+  .bar{display:flex;gap:8px;align-items:center}
+  .chip{all:unset;cursor:pointer;padding:7px 12px;border-radius:999px;border:1px solid var(--line);color:var(--mute);font-size:12px;transition:.2s}
+  .chip:hover{color:var(--ink)}
+  .chip[aria-pressed="true"]{color:var(--ink);background:var(--line)}
+  .value{font-variant-numeric:tabular-nums;color:var(--mute);font-size:12px;min-width:120px;text-align:center}
+  .value b{color:var(--ink);font-weight:600}
+  .keys{color:var(--mute);font-size:11.5px;letter-spacing:.02em}
+  body.embed header,body.embed footer,body.embed .bar,body.embed .keys,body.embed .value{display:none}
+  body.embed{grid-template-rows:1fr}
+  kbd{font:inherit;padding:1px 6px;border:1px solid var(--line);border-radius:5px}
+</style>
+</head>
+<body>
+<script>if(/[?&]embed=1/.test(location.search))document.body.classList.add('embed')</script>
+<header>
+  <a class="brand" href="../../index.html">ui-taste <span>/ Wheel Dropdown</span></a>
+  <a href="https://github.com/Oldleeo/ui-taste/tree/main/components/wheel-dropdown" target="_blank" rel="noopener">Source ↗</a>
+</header>
+<main>
+  <div class="stage"><div id="country" aria-label="Country"></div></div>
+  <div class="value">已选 Selected · <b id="val">Japan</b></div>
+  <div class="bar">
+    <button class="chip" id="snd" aria-pressed="true">🔊 Sound</button>
+    <button class="chip" id="theme" aria-pressed="false">☾ Dark</button>
+  </div>
+  <div class="keys">Click · Scroll / Drag / <kbd>↑</kbd><kbd>↓</kbd> · <kbd>Enter</kbd> · <kbd>Esc</kbd></div>
+</main>
+<footer>
+  <span>Idea by <a href="https://ohwow.design" target="_blank" rel="noopener">@omer_assa · ohwow.design</a></span>
+  <span>Built by Oldlee · MIT</span>
+</footer>
+<script src="flags.js"></script>
+<script src="wheel-dropdown.js"></script>
+<script>
+  const host = document.getElementById('country');
+  const dd = new WheelDropdown(host, {
+    items: Object.keys(FLAGS).map(n => ({ value: n, label: n, icon: FLAGS[n] })),
+    value: 'Japan',
+    onChange: it => document.getElementById('val').textContent = it.label
+  });
+  const snd = document.getElementById('snd');
+  snd.onclick = () => { const on = snd.getAttribute('aria-pressed') !== 'true'; snd.setAttribute('aria-pressed', on); snd.textContent = on ? '🔊 Sound' : '🔇 Sound'; dd.setSound(on); };
+  const th = document.getElementById('theme');
+  th.onclick = () => { const on = th.getAttribute('aria-pressed') !== 'true'; th.setAttribute('aria-pressed', on);
+    document.body.classList.toggle('dark', on); host.dataset.theme = on ? 'dark' : 'light'; dd._ink = null; dd._dirty = true; };
+</script>
+</body>
+</html>
