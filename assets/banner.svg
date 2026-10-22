@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="420" viewBox="0 0 1280 420">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0E0E10"/>
+      <stop offset="1" stop-color="#1A1A1F"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.78" cy="0.5" r="0.45">
+      <stop offset="0" stop-color="#FF6A3D" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#FF6A3D" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#fff" stop-opacity="1"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <mask id="m"><rect x="760" y="40" width="440" height="340" fill="url(#fade)"/></mask>
+  </defs>
+  <rect width="1280" height="420" rx="28" fill="url(#bg)"/>
+  <rect width="1280" height="420" rx="28" fill="url(#glow)"/>
+  <g font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', 'PingFang SC', 'Noto Sans SC', 'Microsoft YaHei', sans-serif">
+    <text x="88" y="150" fill="#8A8A93" font-size="22" letter-spacing="6">OLDLEE · UI TASTE</text>
+    <text x="84" y="236" fill="#F5F5F7" font-size="76" font-weight="700" letter-spacing="-1">ui-taste</text>
+    <text x="88" y="292" fill="#D7D7DC" font-size="30" font-weight="500">A collection of interface taste</text>
+    <text x="88" y="336" fill="#8A8A93" font-size="20">Small, carefully made UI interactions · Vanilla JS · Zero deps</text>
+    <g mask="url(#m)" font-size="30" font-weight="600">
+      <text x="880" y="98"  fill="#F5F5F7" opacity="0.25">Selection</text>
+      <text x="880" y="158" fill="#F5F5F7" opacity="0.5">Motion</text>
+      <text x="880" y="218" fill="#F5F5F7" opacity="0.7">Sound</text>
+      <rect x="840" y="236" width="320" height="64" rx="16" fill="#FF6A3D"/>
+      <text x="880" y="279" fill="#0E0E10" font-weight="700">Taste</text>
+      <text x="880" y="348" fill="#F5F5F7" opacity="0.5">Detail</text>
+      <text x="880" y="408" fill="#F5F5F7" opacity="0.25">Craft</text>
+    </g>
+    <g stroke="#F5F5F7" stroke-opacity="0.3" stroke-width="2" stroke-linecap="round">
+      <line x1="820" y1="88" x2="832" y2="88"/><line x1="816" y1="148" x2="832" y2="148"/>
+      <line x1="812" y1="268" x2="832" y2="268" stroke="#FF6A3D" stroke-opacity="1"/>
+      <line x1="816" y1="338" x2="832" y2="338"/>
+      <line x1="816" y1="208" x2="832" y2="208"/>
+    </g>
+  </g>
+</svg>
