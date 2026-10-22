@@ -9,7 +9,7 @@
 
 <p>
 <a href="https://old.lat/ui-taste/"><img src="https://img.shields.io/badge/在线演示-old.lat%2Fui--taste-111?style=flat-square" alt="在线演示"></a>
-<img src="https://img.shields.io/badge/components-1-FF6A3D?style=flat-square" alt="components">
+<img src="https://img.shields.io/badge/components-2-FF6A3D?style=flat-square" alt="components">
 <img src="https://img.shields.io/badge/deps-0-111?style=flat-square" alt="zero deps">
 <img src="https://img.shields.io/badge/license-MIT-111?style=flat-square" alt="MIT">
 </p>
@@ -52,6 +52,29 @@
 [**在线演示 →**](https://old.lat/wheel-dropdown/) &nbsp;·&nbsp; [源码与文档](components/wheel-dropdown)
 
 <sub>灵感：<a href="https://ohwow.design">@omer_assa</a> · “Dropdowns don't have to drop down.”</sub>
+
+</td>
+</tr>
+<tr>
+<td width="46%" valign="top">
+<a href="components/glass-folders"><img src="assets/glass-folders.gif" alt="Glass Folders"></a>
+</td>
+<td valign="top">
+
+### 玻璃文件夹 · Glass Folders
+
+> 当卡片可以收纳。
+
+整屏就三只文件夹，不用往下滚。光标放上去，磨砂玻璃朝你倾一点；点开，卡片才立起来、扇开。新卡片掉进口袋，口袋会往下一沉。
+
+- 底部铰链：悬停前倾、打开后再倾
+- 卡片扇形展开，带弹簧回弹
+- \+ 新建卡片，掉落 + 口袋下沉
+- ooo 玻璃菜单：关闭 / 重命名 / 分享 / 移到废纸篓
+
+[**在线演示 →**](https://old.lat/glass-folders/) &nbsp;·&nbsp; [源码与文档](components/glass-folders)
+
+<sub>灵感：VG Studio · 小红书「当卡片可以收纳」</sub>
 
 </td>
 </tr>
@@ -104,11 +127,16 @@ ui-taste/
 ├── index.html                 # 组件画廊（在线演示首页）
 ├── assets/                    # 预览 GIF / MP4 / 横幅
 └── components/
-    └── wheel-dropdown/
-        ├── wheel-dropdown.js
-        ├── wheel-dropdown.css
-        ├── flags.js           # 演示用国旗 SVG
-        ├── index.html         # 独立演示页
+    ├── wheel-dropdown/
+    │   ├── wheel-dropdown.js
+    │   ├── wheel-dropdown.css
+    │   ├── flags.js           # 演示用国旗 SVG
+    │   ├── index.html         # 独立演示页
+    │   └── README.md
+    └── glass-folders/
+        ├── glass-folders.js
+        ├── glass-folders.css
+        ├── index.html
         └── README.md
 ```
 
