@@ -9,7 +9,7 @@ Vanilla JavaScript · Zero dependencies · Copy and use</p>
 
 <p>
 <a href="https://old.lat/ui-taste/"><img src="https://img.shields.io/badge/live_demo-old.lat%2Fui--taste-111?style=flat-square" alt="Live demo"></a>
-<img src="https://img.shields.io/badge/components-1-FF6A3D?style=flat-square" alt="components">
+<img src="https://img.shields.io/badge/components-2-FF6A3D?style=flat-square" alt="components">
 <img src="https://img.shields.io/badge/deps-0-111?style=flat-square" alt="zero deps">
 <img src="https://img.shields.io/badge/license-MIT-111?style=flat-square" alt="MIT">
 </p>
@@ -52,6 +52,29 @@ Click it and the menu opens in place as a wheel: items curve along an arc, fade 
 [**Live demo →**](https://old.lat/wheel-dropdown/) &nbsp;·&nbsp; [Code & docs](components/wheel-dropdown)
 
 <sub>Idea by <a href="https://ohwow.design">@omer_assa</a> · "Dropdowns don't have to drop down."</sub>
+
+</td>
+</tr>
+<tr>
+<td width="46%" valign="top">
+<a href="components/glass-folders"><img src="assets/glass-folders.gif" alt="Glass Folders"></a>
+</td>
+<td valign="top">
+
+### Glass Folders · 玻璃文件夹
+
+> When cards can be put away.
+
+Three folders, one screen, no scrolling. Hover and the frosted glass leans toward you; click and the cards stand up and fan out. Drop a new card in and the pocket sinks a little.
+
+- Bottom hinge: leans on hover, further when open
+- Cards fan out with a spring
+- \+ adds a card that drops in and weighs the pocket down
+- ooo glass menu: Close / Rename / Share / Move to Trash
+
+[**Live demo →**](https://old.lat/glass-folders/) &nbsp;·&nbsp; [Code & docs](components/glass-folders)
+
+<sub>Idea by VG Studio · Xiaohongshu 「当卡片可以收纳」</sub>
 
 </td>
 </tr>
@@ -104,11 +127,16 @@ ui-taste/
 ├── index.html                 # gallery (live demo home)
 ├── assets/                    # preview GIF / MP4 / banner
 └── components/
-    └── wheel-dropdown/
-        ├── wheel-dropdown.js
-        ├── wheel-dropdown.css
-        ├── flags.js           # flag SVGs for the demo
-        ├── index.html         # standalone demo
+    ├── wheel-dropdown/
+    │   ├── wheel-dropdown.js
+    │   ├── wheel-dropdown.css
+    │   ├── flags.js           # flag SVGs for the demo
+    │   ├── index.html         # standalone demo
+    │   └── README.md
+    └── glass-folders/
+        ├── glass-folders.js
+        ├── glass-folders.css
+        ├── index.html
         └── README.md
 ```
 
